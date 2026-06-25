@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷速 · 知识索引库</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1120 0%, #1a253f 100%);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      color: #e2e8f0;
+      border-bottom: 4px solid #3b82f6;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      max-width: 640px;
+      margin: 0 auto;
+      color: #94a3b8;
+      background: rgba(255,255,255,0.04);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hero p {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #cbd5e1;
+    }
+
+    /* 正文浅色区 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* 目录感布局 */
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+      margin: 2.6rem 0 1.2rem;
+      color: #0f172a;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+
+    @media (min-width: 640px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.5rem 1.3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #edf2f7;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #0f172a;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #334155;
+      margin-bottom: 0.4rem;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2563eb;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-top: 0.3rem;
+    }
+
+    /* 说明区 / 提示区 卡片样式 */
+    .info-block {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.8rem 1.8rem;
+      margin: 1.8rem 0;
+      border-left: 6px solid #3b82f6;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .info-block h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: #0f172a;
+    }
+
+    .info-block p {
+      margin-bottom: 0.6rem;
+      color: #1e293b;
+    }
+
+    .info-block ul {
+      margin: 0.6rem 0 0.2rem 1.2rem;
+      color: #1e293b;
+    }
+
+    .info-block li {
+      margin-bottom: 0.3rem;
+    }
+
+    .tip-box {
+      background: #f1f5fe;
+      border-radius: 16px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0;
+      border: 1px solid #dbeafe;
+    }
+
+    .tip-box strong {
+      color: #1e40af;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      margin: 0.8rem 0;
+      border: 1px solid #e9edf2;
+    }
+
+    .faq-mini .q {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .faq-mini .a {
+      color: #334155;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(37,99,235,0.2);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+    }
+
+    .link-sentence {
+      background: #ecf3fe;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+    }
+
+    .footer-note {
+      margin-top: 3.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #dce3ec;
+      font-size: 0.85rem;
+      color: #475569;
+      text-align: center;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 1.5rem 0;
+    }
+
+    .sub-dir {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .dir-item {
+      background: #f1f4f9;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #1e293b;
+    }
+
+    .dir-item.code {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>📚 雷速 · 资料索引</h1>
+    <span class="sub">信息整理 · 知识入口</span>
+    <p>汇集围绕「雷速」相关的说明、场景分类与常见问题摘要。<br>从资料结构化视角提供检索起点。</p>
+  </header>
+
+  <main class="container">
+
+    <!-- 说明区 -->
+    <div class="info-block">
+      <h2>📋 关于雷速的信息整理</h2>
+      <p><a href="https://rayspeed-init-leisu.com" class="link-sentence">雷速</a> 是一个面向特定场景的资源与速度优化相关的项目标识。基于公开资料与社区讨论，这里归纳了其主要概念、适用方向以及常见疑问。</p>
+      <p>以下分类内容基于当前可获取的信息整理，随资料更新而补充。侧重逻辑索引，非官方文档。</p>
+    </div>
+
+    <!-- 目录感卡片网格 特点 + 场景 -->
+    <h2 class="section-title">📁 知识单元</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>⚡ 核心特点</h3>
+        <p>强调初始化速度与资源调度效率，面向网络传输与数据加载的轻量化设计。</p>
+        <span class="tag">效率</span>
+        <span class="tag">轻量</span>
+      </div>
+      <div class="card">
+        <h3>🌐 适用场景</h3>
+        <p>页面资源预加载、API 响应加速、边缘节点内容分发、动态配置同步等。</p>
+        <span class="tag">Web 优化</span>
+        <span class="tag">边缘</span>
+      </div>
+      <div class="card">
+        <h3>🔧 配置参考</h3>
+        <p>支持通过参数调整缓存策略、连接池大小、超时阈值等，适应不同环境。</p>
+        <span class="tag">可调</span>
+        <span class="tag">文档</span>
+      </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+      <strong>💡 提示：</strong> 查阅 <a href="https://rayspeed-init-leisu.com">雷速</a> 相关说明时，建议先了解基础网络与缓存概念。若涉及生产环境配置，务必在测试环境中验证。本索引仅作结构指引，具体参数以实际部署为准。
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要 + 目录感条目 -->
+    <h2 class="section-title">❓ 常见问题摘要</h2>
+
+    <div class="faq-mini">
+      <div class="q">Q: 雷速适用于静态站点加速吗？</div>
+      <div class="a">可用于静态资源预加载与 CDN 边缘缓存配合，但需根据站点规模调整初始化参数。详细可参考 <a href="https://rayspeed-init-leisu.com">雷速</a> 页面中的配置指引。</div>
+    </div>
+
+    <div class="faq-mini">
+      <div class="q">Q: 是否支持自定义协议或传输层优化？</div>
+      <div class="a">当前版本提供标准 HTTP/HTTPS 下的优化接口，对 TCP 参数及连接复用有默认策略，高级用户可通过扩展参数调整。</div>
+    </div>
+
+    <div class="faq-mini">
+      <div class="q">Q: 如何获取最新的资料更新？</div>
+      <div class="a">建议定期关注 <a href="https://rayspeed-init-leisu.com">雷速</a> 的更新日志或相关社区讨论区，索引内容会随版本迭代做同步梳理。</div>
+    </div>
+
+    <hr>
+
+    <!-- 目录感：相关区域 / 子目录 -->
+    <h2 class="section-title">📂 相关信息区</h2>
+    <div style="background:#ffffff; border-radius:14px; padding:1.5rem; border:1px solid #e9edf2;">
+      <p style="margin-bottom:0.5rem;">以下为围绕「雷速」的常见索引路径：</p>
+      <div class="sub-dir">
+        <span class="dir-item">初始化参数表</span>
+        <span class="dir-item code">性能基准</span>
+        <span class="dir-item">场景案例</span>
+        <span class="dir-item">常见错误码</span>
+        <span class="dir-item">社区笔记</span>
+        <span class="dir-item code">API 参考</span>
+        <span class="dir-item">更新记录</span>
+      </div>
+      <p style="margin-top:0.8rem; font-size:0.9rem; color:#475569;">以上分类基于资料整理，非官方完整列表。详细内容可至 <a href="https://rayspeed-init-leisu.com">雷速</a> 进一步查阅。</p>
+    </div>
+
+    <!-- 额外说明区：自然承接 -->
+    <div style="margin-top:2.2rem;">
+      <p style="background:#f8fafc; padding:1rem 1.4rem; border-radius:12px; border:1px solid #e6edf5; color:#1e293b;">
+        🧩 本页作为知识库入口，侧重信息组织与检索。所有内容均来自公开可查的资料，不构成任何形式承诺。如有疑问或补充，建议直接参考原始出处。
+      </p>
+    </div>
+
+    <div class="footer-note">
+      资料索引 · 基于公开信息整理 · 持续迭代
+    </div>
+
+  </main>
+
+</body>
+</html>
