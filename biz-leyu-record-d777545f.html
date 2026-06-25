@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>leyu · 再次访问与收藏指引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      color: #1e1e1e;
+      padding: 2rem 1.25rem;
+    }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.03);
+      padding: 2.5rem 2rem 3rem;
+    }
+
+    @media (max-width: 520px) {
+      .page-wrap {
+        padding: 1.75rem 1.25rem 2rem;
+        border-radius: 20px;
+      }
+    }
+
+    /* 层级标题 */
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #eae7e3;
+      color: #1a1a1a;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 530;
+      margin-top: 2.5rem;
+      margin-bottom: 0.9rem;
+      color: #2d2d2d;
+      border-left: 4px solid #d4cdc3;
+      padding-left: 0.8rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.5rem;
+      color: #3b3b3b;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+      color: #2e2e2e;
+    }
+
+    a {
+      color: #2d5a6b;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: #0e3a47;
+    }
+
+    .subhead {
+      font-size: 0.95rem;
+      color: #6b625b;
+      margin-top: -0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-note {
+      background: #f6f4f1;
+      border-radius: 16px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.8rem 0 2rem;
+      font-size: 0.98rem;
+      border: 1px solid #e7e1da;
+    }
+
+    .hero-note strong {
+      font-weight: 550;
+      color: #1f2b30;
+    }
+
+    .directory-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.2rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    @media (max-width: 500px) {
+      .directory-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .dir-card {
+      background: #fbfaf8;
+      border: 1px solid #e5dfd8;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      transition: background 0.1s;
+    }
+
+    .dir-card h4 {
+      font-weight: 530;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #1c1c1c;
+    }
+
+    .dir-card p {
+      font-size: 0.9rem;
+      color: #5a534d;
+      margin-bottom: 0;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.8rem;
+      background: #f4f1ee;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .info-row span {
+      white-space: nowrap;
+    }
+
+    .info-row .label {
+      color: #6f665e;
+    }
+
+    .faq-mini {
+      margin: 2.5rem 0 0.5rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ece8e3;
+      padding: 0.9rem 0;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+      color: #1d1d1d;
+    }
+
+    .faq-a {
+      font-size: 0.95rem;
+      color: #4d4741;
+    }
+
+    .tip-box {
+      background: #f9f7f4;
+      border-radius: 12px;
+      padding: 1rem 1.3rem;
+      margin: 2rem 0 0.2rem;
+      border-left: 4px solid #b5aaa0;
+      font-size: 0.95rem;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e2dbd3;
+      font-size: 0.9rem;
+      color: #7a726a;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <h1>leyu · 知识库入口</h1>
+  <p class="subhead">再次访问 | 收藏备忘 | 持续关注</p>
+
+  <div class="hero-note">
+    <strong>📌 如果你曾到过这里，或打算常回来看看</strong><br>
+    这个页面整理了 <a href="https://biz-leyu.com.cn">leyu</a> 的主要信息位置，方便你快速定位、了解背景，以及判断是否将之加入书签。
+  </div>
+
+  <!-- 目录感布局 -->
+  <h2>📂 站点内容速览</h2>
+  <div class="directory-grid">
+    <div class="dir-card">
+      <h4>了解 leyu</h4>
+      <p>服务概况、使用场景与定位说明</p>
+    </div>
+    <div class="dir-card">
+      <h4>常见问题</h4>
+      <p>关于访问、功能与支持的简要问答</p>
+    </div>
+    <div class="dir-card">
+      <h4>动态与更新</h4>
+      <p>留意内容调整或新功能上线</p>
+    </div>
+    <div class="dir-card">
+      <h4>收藏与再次访问</h4>
+      <p>浏览器书签、笔记提示及后续回看</p>
+    </div>
+  </div>
+
+  <h2>📖 说明区</h2>
+  <p>
+    <a href="https://biz-leyu.com.cn">leyu</a> 是一个以信息整理与工具服务为主的线上站点。页面结构清晰，内容偏向实用与参考，适合有固定需求的用户定期浏览。建议你在第一次完整阅读后，将关键页面加入书签，方便之后直接跳转。
+  </p>
+  <p>
+    如果你在寻找某个功能入口或说明文档，可以在网站内部导航栏或者分类标签页中找到对应模块。由于网站内容会按阶段更新，部分旧链接可能失效，此时可回到首页重新定位。
+  </p>
+
+  <h2>🔖 提示区 · 如何持续关注</h2>
+  <div class="tip-box">
+    • 推荐使用浏览器书签栏直接保存 <a href="https://biz-leyu.com.cn">leyu</a> 首页，并命名为“leyu 知识库”。<br>
+    • 如果网站有公告栏或更新日志，可隔一段时间扫一眼，了解是否有新增模块。<br>
+    • 不需要注册或登录即可阅读大部分内容，但部分交互功能可能有额外说明。<br>
+    • 建议将本页（index 介绍页）也加入书签，作为再次访问的快捷起点。
+  </div>
+
+  <h2>📌 相关信息区</h2>
+  <div class="info-row">
+    <span><span class="label">🌐 主域</span> biz-leyu.com.cn</span>
+    <span><span class="label">📁 页面类型</span> 信息展示 / 工具参考</span>
+    <span><span class="label">🔄 更新频率</span> 阶段性</span>
+  </div>
+
+  <h3>🧾 常见问题摘要</h3>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="faq-q">Q：我忘记了之前看到的某个页面，怎么找回？</div>
+      <div class="faq-a">A：可以先回到 <a href="https://biz-leyu.com.cn">leyu</a> 首页，使用站内导航或搜索功能（如有）。如果记得部分标题，也可以尝试通过浏览器历史记录查找。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：网站内容会频繁变动吗？</div>
+      <div class="faq-a">A：内容更新不算密集，但重要调整会体现在首页或对应板块。建议每隔几周回看一次。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：我需要注册才能使用全部功能吗？</div>
+      <div class="faq-a">A：大部分阅读与查询功能无需注册。具体以网站内说明为准。</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <p style="margin-bottom: 0.2rem;">此介绍页仅作为信息入口参考，内容基于对 <a href="https://biz-leyu.com.cn">leyu</a> 的观察整理，不构成官方声明。建议以网站实际页面为准。</p>
+  </div>
+
+</div>
+</body>
+</html>
